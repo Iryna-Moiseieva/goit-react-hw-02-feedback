@@ -35,12 +35,13 @@ export default class App extends Component {
     const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
+    const nameFeedbackButton = Object.keys(this.state);
 
     return (
       <div className={s['container']}>
         <Section title={'Please leave feedback'}>
           <FeedbackOptions
-            options={Object.keys(this.state)}
+            options={nameFeedbackButton}
             onLeaveFeedback={this.onButtonClick}
           />
         </Section>
